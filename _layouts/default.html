@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'pt-BR' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#115e59">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ '/assets/images/site-badge.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    {% seo %}
+    {% include analytics.html %}
+  </head>
+  <body class="{% if page.landing %}page-landing{% else %}page-doc{% endif %}">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand__mark">TW</span>
+          <span class="brand__text">
+            <strong>Trilha Web</strong>
+            <span>Do zero à programação web</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+          Menu
+        </button>
+
+        <nav class="top-nav" id="primary-nav" data-nav>
+          {% for item in site.data.navigation.primary %}
+            {% assign item_url = item.url | relative_url %}
+            <a class="{% if page.url == item.url %}is-active{% endif %}" href="{{ item_url }}">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    {% if page.landing %}
+      <main id="conteudo" class="landing">
+        <section class="hero">
+          <div class="hero__content">
+            <p class="eyebrow">Material gratuito e progressivo</p>
+            <h1>{{ page.title }}</h1>
+            <p class="hero__lead">{{ page.description }}</p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="{{ '/guia-de-estudos/' | relative_url }}">Começar pela trilha</a>
+              <a class="button button--ghost" href="{{ '/plano-de-estudo/' | relative_url }}">Ver plano de 20 semanas</a>
+            </div>
+
+            <ul class="hero__stats">
+              <li><strong>10</strong><span>módulos guiados</span></li>
+              <li><strong>100%</strong><span>conteúdo gratuito</span></li>
+              <li><strong>0 → web</strong><span>pensado para iniciantes reais</span></li>
+            </ul>
+          </div>
+
+          <aside class="hero__panel">
+            <p class="eyebrow">O que você encontra aqui</p>
+            <ul class="panel-list">
+              <li>Vídeos com boa didática</li>
+              <li>Leituras complementares</li>
+              <li>Exercícios e checklists</li>
+              <li>Projetos para consolidar cada etapa</li>
+              <li>Publicação final com GitHub Pages</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="home-copy prose">
+          {{ content }}
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <p class="eyebrow">Percurso</p>
+            <h2>Módulos da trilha</h2>
+            <p>Uma sequência pensada para construir base antes de acelerar.</p>
+          </div>
+
+          <div class="card-grid">
+            {% for item in site.data.navigation.modules %}
+              <a class="info-card info-card--{{ item.accent }}" href="{{ item.url | relative_url }}">
+                <p class="info-card__time">{{ item.time }}</p>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.summary }}</p>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="section-block section-block--support">
+          <div class="section-heading">
+            <p class="eyebrow">Apoio</p>
+            <h2>Materiais complementares</h2>
+            <p>Use estes conteúdos para organizar o estudo e revisar os conceitos principais.</p>
+          </div>
+
+          <div class="support-grid">
+            {% for item in site.data.navigation.support %}
+              <a class="support-card" href="{{ item.url | relative_url }}">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.summary }}</p>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      </main>
+    {% else %}
+      <main id="conteudo" class="doc-layout">
+        <aside class="sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Módulos</p>
+            <ul class="sidebar-nav">
+              {% for item in site.data.navigation.modules %}
+                <li>
+                  <a class="{% if page.url == item.url %}is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+
+          <section class="sidebar-card">
+            <p class="eyebrow">Apoio</p>
+            <ul class="sidebar-nav sidebar-nav--support">
+              {% for item in site.data.navigation.support %}
+                <li>
+                  <a class="{% if page.url == item.url %}is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        </aside>
+
+        <article class="content-surface">
+          {% if page.section or page.study_time %}
+            <div class="page-meta">
+              {% if page.section %}<span class="meta-pill">{{ page.section }}</span>{% endif %}
+              {% if page.study_time %}<span class="meta-pill">{{ page.study_time }}</span>{% endif %}
+            </div>
+          {% endif %}
+
+          <div class="prose">
+            {{ content }}
+          </div>
+
+          {% if page.prev_url or page.next_url %}
+            <nav class="pager" aria-label="Navegação entre páginas">
+              {% if page.prev_url %}
+                <a class="pager__item" href="{{ page.prev_url | relative_url }}">
+                  <span>Anterior</span>
+                  <strong>{{ page.prev_label | default: "Voltar" }}</strong>
+                </a>
+              {% endif %}
+
+              {% if page.next_url %}
+                <a class="pager__item pager__item--next" href="{{ page.next_url | relative_url }}">
+                  <span>Próximo</span>
+                  <strong>{{ page.next_label | default: "Continuar" }}</strong>
+                </a>
+              {% endif %}
+            </nav>
+          {% endif %}
+        </article>
+      </main>
+    {% endif %}
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Feito para ser simples de estudar, simples de manter e fácil de publicar.</p>
+        <p>
+          <a href="{{ '/publicacao/' | relative_url }}">Publicação, domínio e analytics</a>
+        </p>
+      </div>
+    </footer>
+
+    {% include cookie-banner.html %}
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  </body>
+</html>
+

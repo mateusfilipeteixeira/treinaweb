@@ -1,0 +1,8 @@
+{% if site.google_analytics and site.google_analytics != "" and jekyll.environment == "production" %}
+  <script>
+    window.siteAnalytics = {
+      measurementId: "{{ site.google_analytics }}"
+    };
+  </script>
+{% endif %}
+

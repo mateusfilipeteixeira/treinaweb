@@ -1,0 +1,36 @@
+title: Trilha de Estudos Web
+description: >-
+  Uma trilha gratuita e progressiva para aprender do zero até programação web,
+  com módulos, exercícios, projetos e referências selecionadas para iniciantes.
+lang: pt-BR
+timezone: America/Sao_Paulo
+url: "https://treinamento.mateusteixeira.dev"
+baseurl: ""
+logo: /assets/images/site-badge.svg
+image: /assets/images/og-cover.svg
+google_analytics: "G-8JBRXRVS99"
+author:
+  name: Mateus Teixeira
+
+permalink: pretty
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/images/og-cover.svg
+
+exclude:
+  - README.md
+  - CNAME.example

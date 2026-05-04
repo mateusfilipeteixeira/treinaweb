@@ -1,0 +1,73 @@
+primary:
+  - title: Início
+    url: /
+  - title: Plano de 20 Semanas
+    url: /plano-de-estudo/
+  - title: Glossário
+    url: /glossario/
+  - title: Publicação
+    url: /publicacao/
+
+modules:
+  - title: 00. Guia de Estudos
+    url: /guia-de-estudos/
+    time: 1 semana
+    summary: Organize rotina, ferramentas e método antes de começar a programar.
+    accent: preparacao
+  - title: 01. Alfabetização Digital
+    url: /alfabetizacao-digital-e-seguranca/
+    time: 1 a 2 semanas
+    summary: Aprenda arquivos, navegador, ambiente de estudo e segurança básica.
+    accent: base
+  - title: 02. Lógica de Programação
+    url: /logica-de-programacao/
+    time: 3 a 4 semanas
+    summary: Desenvolva raciocínio com algoritmos, condições, repetições e funções.
+    accent: base
+  - title: 03. HTML e Fundamentos da Web
+    url: /html-e-fundamentos-da-web/
+    time: 2 semanas
+    summary: Entenda a web por dentro e monte suas primeiras páginas com HTML.
+    accent: web
+  - title: 04. CSS e Layout
+    url: /css-e-layout/
+    time: 3 semanas
+    summary: Transforme estrutura em interface com estilo, layout e responsividade.
+    accent: web
+  - title: 05. JavaScript Fundamentos
+    url: /javascript-fundamentos/
+    time: 3 semanas
+    summary: Aprenda a linguagem e comece a resolver problemas com código.
+    accent: pratica
+  - title: 06. JavaScript no Navegador
+    url: /javascript-no-navegador/
+    time: 2 a 3 semanas
+    summary: Manipule DOM, formulários, eventos e armazenamento local.
+    accent: pratica
+  - title: 07. Git e GitHub
+    url: /git-e-github/
+    time: 1 semana
+    summary: Versione seus projetos e publique seu trabalho com mais segurança.
+    accent: entrega
+  - title: 08. Projeto Integrador
+    url: /projeto-integrador-e-publicacao/
+    time: 2 semanas
+    summary: Una tudo em um projeto final com publicação e portfólio.
+    accent: entrega
+  - title: 09. Próximos Passos
+    url: /proximos-passos/
+    time: leitura guiada
+    summary: Escolha a continuação mais adequada para front-end, back-end ou full stack.
+    accent: futuro
+
+support:
+  - title: Plano de Estudo de 20 Semanas
+    url: /plano-de-estudo/
+    summary: Uma sugestão de cronograma para estudar com constância.
+  - title: Glossário para Iniciantes
+    url: /glossario/
+    summary: Definições claras para os termos que aparecem ao longo da trilha.
+  - title: Publicação, Domínio e Analytics
+    url: /publicacao/
+    summary: Checklist para subir no GitHub Pages, ligar GA4 e apontar um domínio.
+

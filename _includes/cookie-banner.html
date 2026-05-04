@@ -1,0 +1,15 @@
+{% if site.google_analytics and site.google_analytics != "" %}
+  <section class="cookie-banner" hidden data-cookie-banner>
+    <div class="cookie-banner__content">
+      <p class="cookie-banner__title">Cookies de estatística</p>
+      <p class="cookie-banner__text">
+        Este site pode usar Google Analytics para medir acessos e entender quais páginas ajudam mais os estudantes.
+      </p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button class="button button--ghost" type="button" data-cookie-reject>Recusar</button>
+      <button class="button button--primary" type="button" data-cookie-accept>Aceitar</button>
+    </div>
+  </section>
+{% endif %}
+

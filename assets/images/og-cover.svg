@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Trilha de Estudos Web">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f1e7"/>
+      <stop offset="100%" stop-color="#f4ecdf"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#115e59"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="110" r="130" fill="#f7e7cc"/>
+  <circle cx="170" cy="500" r="170" fill="#dde9fb"/>
+  <rect x="100" y="88" width="160" height="160" rx="32" fill="url(#card)"/>
+  <path d="M150 132h60v12h-24v48h-12v-48h-24z" fill="#fff"/>
+  <path d="M146 206h68" stroke="#f7e7cc" stroke-width="10" stroke-linecap="round"/>
+  <text x="100" y="340" fill="#1d2939" font-family="'Space Grotesk', Arial, sans-serif" font-size="64" font-weight="700">
+    Trilha de Estudos Web
+  </text>
+  <text x="100" y="412" fill="#475467" font-family="'Source Serif 4', Georgia, serif" font-size="30">
+    Do zero à programação web, com módulos, exercícios,
+  </text>
+  <text x="100" y="454" fill="#475467" font-family="'Source Serif 4', Georgia, serif" font-size="30">
+    projetos e materiais pensados para iniciantes reais.
+  </text>
+</svg>
+
