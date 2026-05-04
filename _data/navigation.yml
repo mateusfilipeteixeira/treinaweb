@@ -5,8 +5,6 @@ primary:
     url: /plano-de-estudo/
   - title: Glossário
     url: /glossario/
-  - title: Publicação
-    url: /publicacao/
 
 modules:
   - title: 00. Guia de Estudos
@@ -67,7 +65,4 @@ support:
   - title: Glossário para Iniciantes
     url: /glossario/
     summary: Definições claras para os termos que aparecem ao longo da trilha.
-  - title: Publicação, Domínio e Analytics
-    url: /publicacao/
-    summary: Checklist para subir no GitHub Pages, ligar GA4 e apontar um domínio.
 
